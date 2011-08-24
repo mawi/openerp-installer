@@ -1,0 +1,13 @@
+A simple openerp installation script.
+
+* Includes openerp server and web client.
+* Installs all necesary packages. 
+* Stores data in /opt/openerp with "openerp" user (default password: "openerp") 
+* Installs start/stop scrips in init.d.
+* Automamatically stars and stops openerp server and client
+
+Tested in ubuntu 10.04
+                        
+Based on:
+
+http://www.theopensourcerer.com/2011/04/19/how-to-install-openerp-6-on-ubuntu-10-04-lts-server-part-1/
