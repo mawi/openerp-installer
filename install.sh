@@ -10,7 +10,7 @@ apt-get install postgresql python python-psycopg2 python-reportlab \
 python-egenix-mxdatetime python-tz python-pychart python-mako \
 python-pydot python-lxml python-vobject python-yaml python-dateutil \
 python-pychart python-pydot python-webdav python-cherrypy3 python-formencode python-pybabel \
-python-simplejson python-pyparsing     
+python-simplejson python-pyparsing apache2     
 
 # ADDING SYSTEM USER "OPENERP" AND POSGRESQL USER "OPENERP" WITH PASSWORD "OPENERP"
 adduser --system --home=/opt/openerp --group openerp 
@@ -37,6 +37,11 @@ mkdir /var/log/openerp
 chown openerp:root /var/log/openerp    
 
 # RESTART EVERYTHING. OPENERP IS INSTALLED      
-/etc/init.d/postgresql restart
+/etc/init.d/postgresql-8.4 restart
 /etc/init.d/openerp-server restart
-/etc/init.d/openerp-web restart
+/etc/init.d/openerp-web restart     
+
+#APACHE CONFIGURATION
+a2enmod ssl proxy_http headers rewrite         
+
+
